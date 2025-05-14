@@ -1,30 +1,43 @@
-# EDSD_Frontend# 👋 Hi, I'm Johanna Schnell — Full Stack Software Developer | Creative Technologist | Community-Driven Thinker
+# 🏘️ EDSD Homelessness Volunteer Resource App
 
-Welcome to my portfolio! I'm a software engineer with a background in education, digital storytelling, and community building. After years of running my own childcare business and supporting mission-driven initiatives, I pivoted into tech to create scalable, impactful solutions that empower people and protect our shared future.
+A web-based resource hub built to connect volunteers, service providers, and individuals experiencing homelessness in the Episcopal Diocese of San Diego (EDSD) community.
 
-## 🔧 Technical Skills
-- **Languages & Frameworks:** JavaScript, Python, HTML/CSS, React, Node.js, Express.js
-- **Tools & Platforms:** Git, GitHub, VS Code, MongoDB, Postman
-- **Cloud & DevOps:** AWS (in training), CI/CD pipelines, REST APIs
-- **Creative Tools:** Figma, Canva, Adobe Creative Suite, Microsoft Suite
-- **Soft Skills:** Project Management, Content Strategy, Grant Writing, Cross-functional Collaboration
+## ✨ Purpose
 
-## 🌱 Current Focus
-- Cloud Engineering & DevOps practices
-- Building ethical and accessible tech
-- Supporting startups through Digital Labs & community-centered design
+This app was developed in response to a growing need for coordination among faith communities, nonprofits, and volunteers serving unhoused populations. It aims to simplify access to resources, centralize volunteer opportunities, and promote dignity-first support for all.
 
-## 📂 Featured Projects
-- [**Ontologic Platform**](#): Working with Aquillius to onboard a new software platform, supporting presales, SSO integration, and front-end dev.
-- [**Childcare Management App (in progress)**](#): Designed to help home daycare providers track attendance, payments, and licensing compliance.
-- [**Interactive Story Map**](#): A React-based map experience connecting clean water initiatives to personal narratives and real-time data.
+## 🧩 Features
 
-## 🤝 Let’s Connect
-I'm always excited to collaborate with teams that care about impact as much as innovation. Whether you need a thoughtful front-end developer, a systems thinker, or someone to help bridge technical and non-technical worlds—I’m here for it.
+- 📍 **Resource Directory**  
+  Filterable and categorized list of local shelters, food programs, showers, legal aid, and more.
 
-📬 Reach me on [LinkedIn](https://linkedin.com/in/johanna-e-schnell)  
-📧 Email: johannaschnell@gmail.com  
+- 🙋‍♀️ **Volunteer Coordination**  
+  Calendar and sign-up system for local service events, donation drives, and outreach needs.
 
----
+- 🧭 **Navigation & Access Tools**  
+  Map integration to show nearby services with walking directions and accessibility tags.
 
-> *“Technology is a tool. What matters is how we use it to connect, uplift, and build a better world.”*
+- 📄 **Printable Outreach Flyers**  
+  Generate printable handouts with QR codes and updated service info for outreach volunteers.
+
+- 🔐 **Admin Dashboard (WIP)**  
+  Admin panel to manage events, update resources, and monitor site usage.
+
+## 🛠 Tech Stack
+
+- **Frontend:** React, Tailwind CSS, Mapbox
+- **Backend:** Node.js, Express, MongoDB (Mongoose)
+- **Auth & Deployment:** JWT Auth, Netlify (frontend), Render (backend)
+- **API Integrations:** Google Calendar API, Mapbox API
+
+## 🧪 Future Improvements
+
+- Add user roles for churches, volunteers, and nonprofit orgs
+- Enable SMS/text alerts for last-minute outreach needs
+- Include anonymized data collection for grant reporting
+
+## 🙌 Our Partners
+
+This project was inspired by conversations within the Episcopal Diocese of San Diego and supported by volunteers committed to compassionate, community-rooted care. Special thanks to EDSD’s Peace & Justice Ministry, regional outreach teams, and the folks on the ground who do the work every day.
+
+## 💡 Want to Contribute?
