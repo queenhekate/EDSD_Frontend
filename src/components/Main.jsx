@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZJ6FSAFTBSM-XiLRNgtuIJ6vBJKPqMotM7r3JZo8OYctPfaI1kwZ-5FdQZoZOkpH1O7TZQgkq9uqa/pub?output=csv";
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZJ6FSAFTBSM-XiLRNgtuIJ6vBJKPqMotM7r3JZo8OYctPfaI1kwZ-5FdQZoZOkpH1O7TZQgkq9uqa/pub?output=csv";
+
 
 function parseCSV(text) {
   const rows = text.trim().split("\n");
