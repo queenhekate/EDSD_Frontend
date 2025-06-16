@@ -63,7 +63,7 @@ function Main() {
           margin: "10px",
         }}
       >
-        FIND HELP NOW - RESOURCES FROM EDSD CHURCHES
+        FIND HELP NOW: RESOURCES FROM EDSD CHURCHES
       </h1>
       <div
         className="filter"
