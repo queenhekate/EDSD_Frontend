@@ -17,7 +17,7 @@ function parseCSV(text) {
 }
 
 function Main() {
-  const [data, setData] = useState([]);
+  const [setData] = useState([]);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState([]);
   const [loading, setLoading] = useState(false);
