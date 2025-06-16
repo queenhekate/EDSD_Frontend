@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/1A2B3C4D5E6F7G8H9I0J/export?format=csv";
+  "https://docs.google.com/spreadsheets/d/18q40KGtN2lLllszVcjh2tamkksFURcZTR5w5xM1qbZ0/export?format=csv";
 
 function parseCSV(text) {
   const rows = text.trim().split("\n");
