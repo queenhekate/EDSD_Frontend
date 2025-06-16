@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "homepage": "https://queenhekate.github.io/EDSD_Frontend",
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "vite build && gh-pages -d dist"
+},
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -26,3 +27,4 @@
     "vite": "^6.3.5"
   }
 }
+
