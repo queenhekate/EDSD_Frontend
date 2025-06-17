@@ -1,20 +1,16 @@
 import { useState } from "react";
-
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZJ6FSAFTBSM-XiLRNgtuIJ6vBJKPqMotM7r3JZo8OYctPfaI1kwZ-5FdQZoZOkpH1O7TZQgkq9uqa/pub?output=csv";
-
+import Papa from "papaparse";
 
 function parseCSV(text) {
-  const rows = text.trim().split("\n");
-  const headers = rows[0].split(",");
-  return rows.slice(1).map((row) => {
-    const values = row.split(",");
-    const entry = {};
-    headers.forEach((header, i) => {
-      entry[header.trim()] = values[i] ? values[i].trim() : "";
-    });
-    return entry;
+  const parsed = Papa.parse(text, {
+    header: true,
+    skipEmptyLines: true,
   });
+  return parsed.data;
 }
+
+const SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZJ6FSAFTBSM-XiLRNgtuIJ6vBJKPqMotM7r3JZo8OYctPfaI1kwZ-5FdQZoZOkpH1O7TZQgkq9uqa/pub?output=csv";
 
 function Main() {
   const [data, setData] = useState([]);
@@ -37,7 +33,8 @@ function Main() {
           (entry.Congregation || "").toLowerCase().includes(keyword) ||
           (entry.City || "").toLowerCase().includes(keyword) ||
           (entry.Service_Types || "").toLowerCase().includes(keyword) ||
-          (entry.Current_Service || "").toLowerCase().includes(keyword)
+          (entry.Current_Service || "").toLowerCase().includes(keyword) ||
+          (entry.Address || "").toLowerCase().includes(keyword)
       );
       setFiltered(results);
     } catch (err) {
@@ -74,27 +71,41 @@ function Main() {
           alignItems: "center",
         }}
       >
-        <input
-          type="text"
-          placeholder="Search for food, showers, city, etc."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{ padding: "0.5rem", fontSize: "1rem", flex: 1 }}
-        />
-        <button
-          onClick={handleSearch}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault(); // Prevents the page from reloading
+            handleSearch(); // Calls your existing search logic
+          }}
           style={{
-            padding: "0.5rem 1rem",
-            background: "#A62D2D",
-            color: "#fff",
-            border: "none",
-            borderRadius: "4px",
-            fontSize: "1rem",
-            cursor: "pointer",
+            marginBottom: "1rem",
+            display: "flex",
+            gap: "1rem",
+            alignItems: "center",
+            width: "100%",
           }}
         >
-          SEARCH
-        </button>
+          <input
+            type="text"
+            placeholder="Search for food, showers, city, etc."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{ padding: "0.5rem", fontSize: "1rem", flex: 1 }}
+          />
+          <button
+            type="submit"
+            style={{
+              padding: "0.5rem 1rem",
+              background: "#A62D2D",
+              color: "#fff",
+              border: "none",
+              borderRadius: "4px",
+              fontSize: "1rem",
+              cursor: "pointer",
+            }}
+          >
+            SEARCH
+          </button>
+        </form>
       </div>
       {loading && <div>Loading...</div>}
       {searched && !loading && filtered.length === 0 && (
@@ -149,17 +160,7 @@ function Main() {
                   border: "1px solid #ccc",
                 }}
               >
-                Description
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#003366",
-                  color: "#fff",
-                  padding: "0.75rem",
-                  border: "1px solid #ccc",
-                }}
-              >
-                Contact
+                Address
               </th>
             </tr>
           </thead>
@@ -185,7 +186,7 @@ function Main() {
                   {entry.Current_Service}
                 </td>
                 <td style={{ padding: "0.75rem", border: "1px solid #ccc" }}>
-                  {entry.Email}
+                  {entry.Address}
                 </td>
               </tr>
             ))}

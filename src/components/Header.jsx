@@ -8,8 +8,9 @@ function Header() {
         background: "#fff",
         padding: "1.5rem 0",
         display: "flex",
+        flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-between",
       }}
     >
       <img
@@ -17,6 +18,8 @@ function Header() {
         alt="EDSD Logo"
         style={{ height: "60px", marginRight: "1.5rem" }}
       />
+      <Link to="/">Home</Link>
+      <Link to="/volunteer-training">Volunteer Training</Link>
       <h1
         style={{
           color: "#003366",
